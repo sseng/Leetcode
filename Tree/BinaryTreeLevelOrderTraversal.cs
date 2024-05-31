@@ -21,7 +21,7 @@ namespace LeetCode.Tree
                 for (int i = 0; i < size; i++)
                 {
                     root = queue.Dequeue();
-                    list.Add(root.val);
+                    list.Add(root.value);
                     if (root.left != null)
                         queue.Enqueue(root.left);
 

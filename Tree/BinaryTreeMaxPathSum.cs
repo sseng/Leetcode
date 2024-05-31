@@ -17,8 +17,8 @@ namespace LeetCode.Tree
 
             int left = Math.Max(0, PathSum(root.left));
             int right = Math.Max(0, PathSum(root.right));
-            max = Math.Max(max, left + right + root.val);
-            return Math.Max(left, right) + root.val;
+            max = Math.Max(max, left + right + root.value);
+            return Math.Max(left, right) + root.value;
         }
     }
 }

@@ -118,8 +118,10 @@ namespace projects
         }
 
         public static void RunBinarySearch(int target){
-            int[] numbers = {1, 2, 3, 4, 5, 6, 7 };
-            int index = Array.BinarySearch(numbers, target);
+            int[] numbers = { 1, 2, 3, 4, 5, 6, 7 };
+            //int index = Array.BinarySearch(numbers, target);
+            var bs = new BinarySearch();
+            int index = bs.BinarySearchArray(numbers, target);
             Console.WriteLine($"The number {target} is {index} ");
         }
     }

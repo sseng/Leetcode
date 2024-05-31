@@ -6,11 +6,11 @@ namespace LeetCode.Tree
     //102. Binary Tree Level Order Traversal - Medium
     public class TreeNode
     {
-        public int val;
+        public int value;
         public TreeNode left;
         public TreeNode right;
         public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
-            this.val = val;
+            value = val;
             this.left = left;
             this.right = right;
         }
@@ -24,8 +24,8 @@ namespace LeetCode.Tree
             while (q.Count > 0)
             {
                 node = q.Dequeue();
-                Console.Write(node.val + " ");
-                listNode.Add(node.val);
+                Console.Write(node.value + " ");
+                listNode.Add(node.value);
 
                 if (node.left != null)
                     q.Enqueue(node.left);
@@ -35,5 +35,34 @@ namespace LeetCode.Tree
             }
             return listNode;
         }
+    
+        public TreeNode Insert(TreeNode root, int v)
+        {
+            if (root == null)
+            {
+                root = new TreeNode(v);
+            }
+            else if (v < root.value)
+            {
+                root.left = Insert(root.left, v);
+            }
+            else
+            {
+                root.right = Insert(root.right, v);
+            }
+
+            return root;
+        }
+
+        public void Traverse(TreeNode node)
+        {
+            if (node == null)
+            {
+                return;
+            }
+
+            Traverse(node.left);
+            Traverse(node.right);
+        }    
     }
 }
