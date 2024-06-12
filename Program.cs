@@ -17,6 +17,7 @@ namespace projects
         {
             var abc = new Palindrome();
             abc.Test(11);
+            Console.WriteLine("Hello");
             
         }
 
