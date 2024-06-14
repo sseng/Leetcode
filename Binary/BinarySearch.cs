@@ -7,25 +7,17 @@ namespace LeetCode.Binary
     {
         public int BinarySearchArrayRecursive(int[] inputArray, int key, int min, int max)
         {
-            if (min > max)
-            {
-                return -1;
-            }
+            if (min > max)            
+                return -1;        
             else
             {
                 int mid = (min + max)/2;
                 if (key == inputArray[mid])
-                {
                     return ++mid;
-                }
                 else if (key < inputArray[mid])
-                {
                     return BinarySearchArrayRecursive(inputArray, key, min, mid - 1);
-                }
                 else 
-                {
                     return BinarySearchArrayRecursive(inputArray, key, mid + 1, max);
-                }
             }
         }
 
